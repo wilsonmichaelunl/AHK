@@ -11,8 +11,7 @@ namespace AHKPresetCreator.Engines
         {
             var adjustmentX = originalX - newX;
             var adjustmentY = newY - originalY;
-
-
+            
             string[] lines =
             {
                 "SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.",

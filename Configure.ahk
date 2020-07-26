@@ -27,7 +27,7 @@ ifWinNotActive ahk_exe Adobe Premiere Pro.exe
 ;Setting the coordinate mode is really important. This ensures that pixel distances are consistant for everything, everywhere.
 coordmode, pixel, Window
 coordmode, mouse, Window
-coordmode, Caret, Window
+coordmode, Caret, Client
 
 ;This (temporarily) blocks the mouse and keyboard from sending any information, which could interfere with the funcitoning of the script.
 BlockInput, SendAndMouse
