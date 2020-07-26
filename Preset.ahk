@@ -1,10 +1,7 @@
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-;the above will supposedly set A_WorkingDir. It MUST be done in the autoexecute area, BEFORE the code below.
-;SetWorkingDir, C:\Users\TaranWORK\Documents\GitHub\2nd-keyboard\2nd keyboard support files
 
 #NoEnv
 Menu, Tray, Icon, shell32.dll, 283 ; this changes the tray icon to a little keyboard!
-; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 #SingleInstance force ;only one instance of this script may run at a time!
 #MaxHotkeysPerInterval 2000
@@ -21,12 +18,6 @@ preset(item)
 keywait, %A_PriorHotKey% ;this is probably WAY cleaner than allowing the physical key UP events to just happen WHENEVER during the following function. I'm gonna add this to a LOT of my functions... It'll be a bit slower, but also should have way fewer issues, making it worth it.
 
 sendinput, {blind}{SC0EC} ;for debugging
-;Keyshower(item,"preset") ;YOU DO NOT NEED THIS LINE. -- it simply displays keystrokes on the screen for the sake of tutorials...
-; if IsFunc("Keyshower")
-	; {
-	; Func := Func("Keyshower")
-	; RetVal := Func.Call(item,"preset") 
-	; }
 
 ifWinNotActive ahk_exe Adobe Premiere Pro.exe
 	goto theEnding ;and this line is here just in case the function is called while not inside premiere.
@@ -50,9 +41,6 @@ sleep 10
 Sendinput, ^!+k ; another shortcut for Shuttle Stop. CTRL ALT SHIFT K. Set this in Premiere's shortcuts panel.
 ;so if the video is playing, this will stop it. Othewise, it can mess up the script.
 sleep 5
-
-;msgbox, ahk_class =   %class% `nClassNN =     %classNN% `nTitle= %Window%
-;;to check if there are lingering variables...
 
 MouseGetPos, xposP, yposP ;------------------stores the cursor's current coordinates at X%xposP% Y%yposP%
 sendinput, {mButton} ;this will MIDDLE CLICK to bring focus to the panel underneath the cursor (the timeline). I forget exactly why, but if you create a nest, and immediately try to apply a preset to it, it doesn't work, because the timeline wasn't in focus...?
@@ -117,7 +105,7 @@ ControlGetPos, XX, YY, Width, Height, %classNN%, ahk_class %class%, SubWindow, S
 ;;my results:  59, 1229, 252, 21,      Edit1,    ahk_class Premiere Pro
 
 ;tooltip, classNN = %classNN%
-sleep 50
+sleep 10
 ;now we have found a lot of useful information about this find box. Turns out, we don't need most of it...
 ;we just need the X and Y coordinates of the "upper left" corner...
 
@@ -247,12 +235,6 @@ BlockInput, off
 
 prFocus(panel) ;this function allows you to have ONE place where you define your personal shortcuts to "focus" panels in Premiere. Also it ensures that they actaully get into focus, and don't rotate the sequences or anything like that.
 {
-;panel := """" . panel . """" ;this adds quotation marks around the parameter so that it works as a string, not a variable.
-; ; ; if (panel = "effect controls")
-; ; ; {
-	; ; ; Send ^!+5
-	; ; ; return
-; ; ; }
 Send +{7} ;bring focus to the effects panel, in order to "clear" the current focus on the MAIN monitor
 sleep 12
 Send +{7} ;do it AGAIN, just in case a panel was full-screened... it would only have exited full screen, and not switched to the effects panel as it should have.
