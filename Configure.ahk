@@ -55,8 +55,12 @@ sleep 5
 blockinput, MouseMoveOff ;returning mouse movement ability
 BlockInput, off ;do not comment out or delete this line -- or you won't regain control of the keyboard!! However, CTRL+ALT+DEL will still work if you get stuck!! Cool.
 
-MsgBox, Original Coordinates X: %A_CaretX%, Y: %A_CaretY% `nEnter these coordinates into the console window
+MsgBox, Original Coordinates X: %A_CaretX%, Y: %A_CaretY% `nEnter these coordinates into the console window `nOnce these numbers are entered. Click back into Premiere Pro and click ALT+C
 
+theEnding:
+}
+
+typePresetName(){
 BlockInput, MouseMove
 BlockInput, On
 
@@ -68,9 +72,7 @@ Sendinput, twirl in
 
 blockinput, MouseMoveOff ;returning mouse movement ability
 BlockInput, off ;do not comment out or delete this line -- or you won't regain control of the keyboard!! However, CTRL+ALT+DEL will still work if you get stuck!! Cool.
-MsgBox, Click OK and Move cursor to the icon by twirl in preset then press ALT+V
-
-theEnding:
+MsgBox, Click OK and click on the icon by twirl in preset then press ALT+V
 }
 
 getCurrentPos()
@@ -103,5 +105,6 @@ theEnd:
 
 !b::configure()
 !v::getCurrentPos()
+!c::typePresetName()
 
 Esc::ExitApp
