@@ -1,7 +1,6 @@
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #NoEnv
-Menu, Tray, Icon, shell32.dll, 283 ; this changes the tray icon to a little keyboard!
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 #SingleInstance force ;only one instance of this script may run at a time!
 #MaxHotkeysPerInterval 2000
@@ -22,7 +21,6 @@ sendinput, {blind}{SC0EC} ;for debugging
 
 ifWinNotActive ahk_exe Adobe Premiere Pro.exe
 	goto theEnding ;and this line is here just in case the function is called while not inside premiere.
-
 
 ;Setting the coordinate mode is really important. This ensures that pixel distances are consistant for everything, everywhere.
 coordmode, pixel, Window

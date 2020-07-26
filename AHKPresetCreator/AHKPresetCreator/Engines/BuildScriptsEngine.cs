@@ -81,7 +81,7 @@ namespace AHKPresetCreator.Engines
                 "sleep 10",
                 "WinGetClass, class, ahk_id %Window%",
                 "sleep 10",
-                "MouseMove, 0, 50, 0, R",
+                "MouseMove, 0, 180, 0, R",
                 "sleep 10",
                 "MouseClick, left, , , 1",
                 "sleep 10",

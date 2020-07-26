@@ -1,7 +1,6 @@
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #NoEnv
-Menu, Tray, Icon, shell32.dll, 283 ; this changes the tray icon to a little keyboard!
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 #SingleInstance force ;only one instance of this script may run at a time!
 #MaxHotkeysPerInterval 2000
