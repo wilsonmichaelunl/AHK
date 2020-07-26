@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jKZzGqoMHjWMAra0Av5IlkPGPJPhGZPCl30AsTUuo5l7oWlwgDn2Rc3i3PYbnGMAMJxu+vUeu+j6G/qRHMaHXQ==",
+  "dgSpecHash": "TufUYtKDl83OTwtSHjZNWI8BUXwVn/euIETRJnkCUuBEpqynGNKxHIVkVQ7C6XzS7HplcMCAhSwL3tFstWsWfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Michael\\source\\repos\\AHK\\AHKPresetCreator\\AHKPresetCreator\\AHKPresetCreator.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Michael\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.6\\microsoft.extensions.dependencyinjection.3.1.6.nupkg.sha512",
+    "C:\\Users\\Michael\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.6\\microsoft.extensions.dependencyinjection.abstractions.3.1.6.nupkg.sha512"
+  ],
   "logs": []
 }

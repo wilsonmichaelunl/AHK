@@ -57,12 +57,17 @@ BlockInput, off ;do not comment out or delete this line -- or you won't regain c
 
 MsgBox, Original Coordinates X: %A_CaretX%, Y: %A_CaretY% `nEnter these coordinates into the console window
 
+BlockInput, MouseMove
+BlockInput, On
+
 Send +{7}
 sleep 15 ;"sleep" means the script will wait for 20 milliseconds before the next command. This is done to give Premiere some time to load its own things.
 Sendinput, ^b ;CTRL B ------------------------- set in premiere to "select find box"
 
 Sendinput, twirl in
 
+blockinput, MouseMoveOff ;returning mouse movement ability
+BlockInput, off ;do not comment out or delete this line -- or you won't regain control of the keyboard!! However, CTRL+ALT+DEL will still work if you get stuck!! Cool.
 MsgBox, Click OK and Move cursor to the icon by twirl in preset then press ALT+V
 
 theEnding:
@@ -91,7 +96,7 @@ MouseGetPos, X, Y
 blockinput, MouseMoveOff ;returning mouse movement ability
 BlockInput, off ;do not comment out or delete this line -- or you won't regain control of the keyboard!! However, CTRL+ALT+DEL will still work if you get stuck!! Cool.
 
-MsgBox, New Coordinates X: %A_CaretX%, Y: %A_CaretY% `nEnter these coordinates into the console window
+MsgBox, New Coordinates X: %X%, Y: %Y% `nEnter these coordinates into the console window
 
 theEnd:
 }

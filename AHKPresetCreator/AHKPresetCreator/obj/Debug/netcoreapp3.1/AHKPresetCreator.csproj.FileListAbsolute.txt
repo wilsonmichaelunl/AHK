@@ -1,0 +1,16 @@
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\AHKPresetCreator.exe
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.csprojAssemblyReference.cache
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.AssemblyInfoInputs.cache
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.AssemblyInfo.cs
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\AHKPresetCreator.deps.json
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\AHKPresetCreator.runtimeconfig.json
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\AHKPresetCreator.runtimeconfig.dev.json
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\AHKPresetCreator.dll
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\AHKPresetCreator.pdb
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.csproj.CoreCompileInputs.cache
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.csproj.CopyComplete
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.dll
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.pdb
+C:\Users\Michael\source\repos\AHK\AHKPresetCreator\AHKPresetCreator\obj\Debug\netcoreapp3.1\AHKPresetCreator.genruntimeconfig.cache
