@@ -7,6 +7,9 @@ namespace AHKPresetCreator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Preset or Favorite Script? Enter 1 for Preset or enter 2 for Favorite");
+            int scriptType = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Enter Original X Coordinate: ");
             int originalX = Convert.ToInt32(Console.ReadLine());
 
@@ -20,7 +23,16 @@ namespace AHKPresetCreator
             int newY = Convert.ToInt32(Console.ReadLine());
 
             var manager = new BuildScriptsManager();
-            manager.BuildPresetScripts(originalX, originalY, newX, newY);
+
+            if (scriptType == 1)
+            {
+                manager.BuildPresetScripts(originalX, originalY, newX, newY);
+            }
+            else if (scriptType == 2)
+            {
+                manager.BuildFavoriteScripts(originalX, originalY, newX, newY);
+            }
+            
         }
     }
 }

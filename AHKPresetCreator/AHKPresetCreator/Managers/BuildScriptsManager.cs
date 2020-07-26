@@ -15,5 +15,13 @@ namespace AHKPresetCreator.Managers
 
             return;
         }
+
+        public void BuildFavoriteScripts(int originalX, int originalY, int newX, int newY)
+        {
+            var engine = new BuildScriptsEngine();
+            engine.BuildFavoriteScripts(originalX, originalY, newX, newY);
+
+            return;
+        }
     }
 }
