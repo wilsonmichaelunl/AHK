@@ -7,32 +7,55 @@ namespace AHKPresetCreator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Preset or Favorite Script? Enter 1 for Preset or enter 2 for Favorite");
-            int scriptType = Convert.ToInt32(Console.ReadLine());
+            var userContinue = "y";
 
-            Console.WriteLine("Enter Original X Coordinate: ");
-            int originalX = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter Original Y Coordinate: ");
-            int originalY = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter New X Coordinate: ");
-            int newX = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter New Y Coordinate: ");
-            int newY = Convert.ToInt32(Console.ReadLine());
-
-            var manager = new BuildScriptsManager();
-
-            if (scriptType == 1)
+            while(userContinue.ToLower() == "y")
             {
-                manager.BuildPresetScripts(originalX, originalY, newX, newY);
+                Console.WriteLine("What kind of script do you want to make?\n" +
+                    "Enter 1 for Preset\n" +
+                    "Enter 2 for Favorite\n" +
+                    "Enter 3 for Stream Deck Preset\n" +
+                    "Enter 4 for Stream Deck Favorite");
+
+                int scriptType = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter Original X Coordinate: ");
+                int originalX = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter Original Y Coordinate: ");
+                int originalY = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter New X Coordinate: ");
+                int newX = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter New Y Coordinate: ");
+                int newY = Convert.ToInt32(Console.ReadLine());
+
+                var manager = new BuildScriptsManager();
+
+                switch (scriptType)
+                {
+                    case 1:
+                        manager.BuildPresetScript(originalX, originalY, newX, newY);
+                        break;
+                    case 2:
+                        manager.BuildFavoriteScript(originalX, originalY, newX, newY);
+                        break;
+                    case 3:
+                        manager.BuildStreamDeckPresetScript(originalX, originalY, newX, newY);
+                        break;
+                    case 4:
+                        manager.BuildStreamDeckFavoriteScript(originalX, originalY, newX, newY);
+                        break;
+                    default:
+                        Console.WriteLine("You entered an invalid choice.");
+                        break;
+                }
+
+                Console.WriteLine("Would you like to make another script? (Y/N)");
+
+                userContinue = Console.ReadLine();
             }
-            else if (scriptType == 2)
-            {
-                manager.BuildFavoriteScripts(originalX, originalY, newX, newY);
-            }
-            
         }
     }
 }

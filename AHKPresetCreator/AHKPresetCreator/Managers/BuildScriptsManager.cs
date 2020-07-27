@@ -8,18 +8,32 @@ namespace AHKPresetCreator.Managers
 {
     public class BuildScriptsManager
     {
-        public void BuildPresetScripts(int originalX, int originalY, int newX, int newY)
+        BuildScriptsEngine engine = new BuildScriptsEngine();
+
+        public void BuildPresetScript(int originalX, int originalY, int newX, int newY)
         {
-            var engine = new BuildScriptsEngine();
-            engine.BuildPresetScripts(originalX, originalY, newX, newY);
+            engine.BuildPresetScript(originalX, originalY, newX, newY);
 
             return;
         }
 
-        public void BuildFavoriteScripts(int originalX, int originalY, int newX, int newY)
+        public void BuildFavoriteScript(int originalX, int originalY, int newX, int newY)
         {
-            var engine = new BuildScriptsEngine();
-            engine.BuildFavoriteScripts(originalX, originalY, newX, newY);
+            engine.BuildFavoriteScript(originalX, originalY, newX, newY);
+
+            return;
+        }
+
+        public void BuildStreamDeckPresetScript(int originalX, int originalY, int newX, int newY)
+        {
+            engine.BuildStreamDeckPresetScript(originalX, originalY, newX, newY);
+
+            return;
+        }
+
+        public void BuildStreamDeckFavoriteScript(int originalX, int originalY, int newX, int newY)
+        {
+            engine.BuildStreamDeckFavoriteScript(originalX, originalY, newX, newY);
 
             return;
         }
