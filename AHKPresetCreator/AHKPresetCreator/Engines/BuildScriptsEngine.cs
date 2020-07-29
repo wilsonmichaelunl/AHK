@@ -395,7 +395,7 @@ namespace AHKPresetCreator.Engines
                 "WinGetClass, class, ahk_id %Window%",
                 "ControlGetPos, XX, YY, Width, Height, %classNN%, ahk_class %class%, SubWindow, SubWindow",
                 "sleep 10",
-                $"Send ${effect}",
+                $"Send {effect}",
                 "sleep 10",
                 $"MouseMove, {adjustmentX}, {adjustmentY}, 0, R",
                 "sleep 10",
