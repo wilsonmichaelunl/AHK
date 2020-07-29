@@ -8,6 +8,7 @@ namespace AHKPresetCreator
         static void Main(string[] args)
         {
             var userContinue = "y";
+            string effect;
 
             while(userContinue.ToLower() == "y")
             {
@@ -42,10 +43,14 @@ namespace AHKPresetCreator
                         manager.BuildFavoriteScript(originalX, originalY, newX, newY);
                         break;
                     case 3:
-                        manager.BuildStreamDeckPresetScript(originalX, originalY, newX, newY);
+                        Console.WriteLine("Enter the effect you want:");
+                        effect = Console.ReadLine();
+                        manager.BuildStreamDeckPresetScript(originalX, originalY, newX, newY, effect);
                         break;
                     case 4:
-                        manager.BuildStreamDeckFavoriteScript(originalX, originalY, newX, newY);
+                        Console.WriteLine("Enter the effect you want:");
+                        effect = Console.ReadLine();
+                        manager.BuildStreamDeckFavoriteScript(originalX, originalY, newX, newY, effect);
                         break;
                     default:
                         Console.WriteLine("You entered an invalid choice.");

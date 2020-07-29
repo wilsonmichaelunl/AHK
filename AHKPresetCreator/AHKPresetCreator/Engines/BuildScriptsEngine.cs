@@ -226,7 +226,7 @@ namespace AHKPresetCreator.Engines
             return;
         }
 
-        public void BuildStreamDeckPresetScript(int originalX, int originalY, int newX, int newY)
+        public void BuildStreamDeckPresetScript(int originalX, int originalY, int newX, int newY, string effect)
         {
             var adjustmentX = originalX - newX;
             var adjustmentY = newY - originalY;
@@ -290,7 +290,7 @@ namespace AHKPresetCreator.Engines
                 "WinGetClass, class, ahk_id %Window%",
                 "ControlGetPos, XX, YY, Width, Height, %classNN%, ahk_class %class%, SubWindow, SubWindow",
                 "sleep 10",
-                "Send %item%",
+                $"Send {effect}",
                 "sleep 10",
                 $"MouseMove, {adjustmentX}, {adjustmentY}, 0, R",
                 "sleep 10",
@@ -331,7 +331,7 @@ namespace AHKPresetCreator.Engines
             return;
         }
 
-        public void BuildStreamDeckFavoriteScript(int originalX, int originalY, int newX, int newY)
+        public void BuildStreamDeckFavoriteScript(int originalX, int originalY, int newX, int newY, string effect)
         {
             var adjustmentX = originalX - newX;
             var adjustmentY = newY - originalY;
@@ -395,7 +395,7 @@ namespace AHKPresetCreator.Engines
                 "WinGetClass, class, ahk_id %Window%",
                 "ControlGetPos, XX, YY, Width, Height, %classNN%, ahk_class %class%, SubWindow, SubWindow",
                 "sleep 10",
-                "Send %item%",
+                $"Send ${effect}",
                 "sleep 10",
                 $"MouseMove, {adjustmentX}, {adjustmentY}, 0, R",
                 "sleep 10",

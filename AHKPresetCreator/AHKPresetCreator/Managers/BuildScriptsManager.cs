@@ -24,16 +24,16 @@ namespace AHKPresetCreator.Managers
             return;
         }
 
-        public void BuildStreamDeckPresetScript(int originalX, int originalY, int newX, int newY)
+        public void BuildStreamDeckPresetScript(int originalX, int originalY, int newX, int newY, string effect)
         {
-            engine.BuildStreamDeckPresetScript(originalX, originalY, newX, newY);
+            engine.BuildStreamDeckPresetScript(originalX, originalY, newX, newY, effect);
 
             return;
         }
 
-        public void BuildStreamDeckFavoriteScript(int originalX, int originalY, int newX, int newY)
+        public void BuildStreamDeckFavoriteScript(int originalX, int originalY, int newX, int newY, string effect)
         {
-            engine.BuildStreamDeckFavoriteScript(originalX, originalY, newX, newY);
+            engine.BuildStreamDeckFavoriteScript(originalX, originalY, newX, newY, effect);
 
             return;
         }
