@@ -36,9 +36,9 @@ BlockInput, On
 SetKeyDelay, 0 ;NO DELAY BETWEEN TYPED STUFF! It might actually be best to put this at "1" though.
 
 ;prFocus("timeline") ;maybe not essential i think...
-Sendinput, ^!+k ;shuttle STOP
+Sendinput, k ;shuttle STOP
 sleep 10
-Sendinput, ^!+k ; another shortcut for Shuttle Stop. CTRL ALT SHIFT K. Set this in Premiere's shortcuts panel.
+Sendinput, k ; another shortcut for Shuttle Stop. CTRL ALT SHIFT K. Set this in Premiere's shortcuts panel.
 ;so if the video is playing, this will stop it. Othewise, it can mess up the script.
 sleep 5
 
@@ -50,7 +50,7 @@ prFocus("effects") ;brings focus to the effects panel
 ;Alternative -->;;Send ^+!7 ;CTRL SHIFT ALT 7 --- you must set this in premiere's keyboard shortcuts menu to the "effects" panel
 sendinput, {blind}{SC0EC} ;for debugging
 sleep 15 ;"sleep" means the script will wait for 20 milliseconds before the next command. This is done to give Premiere some time to load its own things.
-Sendinput, ^b ;CTRL B ------------------------- set in premiere to "select find box"
+Sendinput, +f ;CTRL B ------------------------- set in premiere to "select find box"
 sleep 5
 ;Send ^b ;again... actually this will create the DOODLEDE DOOO noise if you do it twice.
 

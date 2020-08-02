@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script type="text/javascript" src="~/js/index.js"></script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+
+
+    <div>
+        <h2>What kind of script would you like to make?</h2>
+
+        <select id="scriptSelectDropdown">
+            <option value="0">Select a script</option>
+            <option value="1">Hot Key Script</option>
+            <option value="2">Presets Stream Deck</option>
+            <option value="3">Favorites Stream Deck</option>
+        </select>
+
+        <div id="partialPlaceHolder" style="display:none; padding-top:50px"></div>
+    </div>
+
+</div>
