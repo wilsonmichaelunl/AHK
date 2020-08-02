@@ -84,6 +84,7 @@ BlockInput, off ;do not comment out or delete this line -- or you won't regain c
 
 MsgBox, New Coordinates X: %X%, Y: %Y% `nEnter these coordinates into the console window
 
+ExitApp
 theEnd:
 }
 
