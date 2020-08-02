@@ -256,7 +256,6 @@ namespace MVCWebApp.Engines
 
         public RunOnOpenScriptConfigurationModel BuildRunOnOpenScriptConfigurationModel(RunOnOpenScriptConfigurationModel model)
         {
-            model.EffectName = Regex.Replace(model.FileName, @"[^0-9a-zA-Z]+", string.Empty);
             model.FileName = Regex.Replace(model.FileName, @"[^0-9a-zA-Z]+", string.Empty);
 
             return model;
