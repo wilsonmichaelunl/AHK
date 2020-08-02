@@ -1,5 +1,70 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using DataContracts
+@model HotKeyScriptConfigurationModel
 
-<h1>Not Yet Implemented</h1>
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/index.js"></script>
+
+<div>
+    @using (Html.BeginForm("CreateHotKeysScript", "Script", FormMethod.Post, new { role = "form" }))
+    {
+        <div class="form-group">
+            <label style="font-weight:bold">Original X Coordinate:</label>
+            <div style="display:flex; align-items:center; justify-content:center;">
+                @Html.TextBoxFor(m => m.OriginalX,
+                new { @class = "form-control", tabindex = 1, style = "width:20%;", @required = "required", @type = "number" })
+                @Html.ValidationMessageFor(m => m.OriginalX)
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight:bold">Original Y Coordinate:</label>
+            <div style="display:flex; align-items:center; justify-content:center;">
+                @Html.TextBoxFor(m => m.OriginalY,
+                new { @class = "form-control", tabindex = 2, style = "width:20%;", @required = "required", @type = "number" })
+                @Html.ValidationMessageFor(m => m.OriginalY)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="formGroupInputLarge1" style="font-weight:bold">New X Coordinate</label>
+            <div style="display:flex; align-items:center; justify-content:center;">
+                @Html.TextBoxFor(m => m.NewX,
+                new { @class = "form-control", tabindex = 3, style = "width:20%;", @required = "required", @type = "number" })
+                @Html.ValidationMessageFor(m => m.NewX)
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight:bold">New Y Coordinate</label>
+            <div style="display:flex; align-items:center; justify-content:center;">
+                @Html.TextBoxFor(m => m.NewY,
+                new { @class = "form-control", tabindex = 4, style = "width:20%;", @required = "required", @type = "number" })
+                @Html.ValidationMessageFor(m => m.NewY)
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight:bold">Test Key Press</label>
+            <div style="display:flex; align-items:center; justify-content:center;">
+                @Html.TextBoxFor(m => m.Test,
+                new { @class = "form-control key-input", tabindex = 9, style = "width:20%;", @required = "required" })
+                @Html.ValidationMessageFor(m => m.NewY)
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight:bold">Effect Name</label>
+            <div style="display:flex; align-items:center; justify-content:center;">
+                @Html.TextBoxFor(m => m.EffectName,
+                new { @class = "form-control", tabindex = 5, style = "width:20%;", @required = "required" })
+                @Html.ValidationMessageFor(m => m.EffectName)
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight:bold">File Name</label>
+            <div style="display:flex; align-items:center; justify-content:center;">
+                @Html.TextBoxFor(m => m.FileName,
+                new { @class = "form-control", tabindex = 6, style = "width:20%;", @required = "required" })
+                @Html.ValidationMessageFor(m => m.FileName)
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    }
+</div>

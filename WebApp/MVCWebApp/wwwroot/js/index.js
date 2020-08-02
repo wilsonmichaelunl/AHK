@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
+    var keys = {};
+    var readKeys = false;
+
     $("#scriptSelectDropdown").change(function () {
         var selectedID = parseInt($(this).val());
 
@@ -28,8 +31,17 @@
         }
     })
 
-    function dataCheck(data) {
-        console.log(data);
-    }
+    $(".key-input").keydown(function (e) {
+        readKeys = true;
+        keys[e.which] = true;
+    });
+
+    $(".key-input").keyup(function (e) {
+        if (readKeys = false) {
+            console.log(keys);
+        }
+        readKeys = false;
+        delete keys[e.which];
+    });
 });
 
