@@ -36,5 +36,11 @@ namespace API.Controllers
 
             return File(file.ToArray(), "text/plain", $"{model.FileName}.ahk");
         }
+
+        [HttpGet]
+        public string Test()
+        {
+            return "hello";
+        }
     }
 }
