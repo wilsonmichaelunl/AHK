@@ -7,6 +7,7 @@ using DataContracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
@@ -38,9 +39,16 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public string Test()
+        public ActionResult<List<RunOnOpenScriptConfigurationModel>> Test()
         {
-            return "hello";
+            var result = new List<RunOnOpenScriptConfigurationModel>();
+            var thing = new RunOnOpenScriptConfigurationModel();
+            thing.EffectName = "Carl Warl";
+
+            result.Add(thing);
+    
+
+            return Ok(result);
         }
     }
 }
