@@ -1,7 +1,7 @@
 
 {
     "region" : "us-east-2",
-    "configuration" : "Release",
+    "configuration" : "Debug",
     "framework"     : "netcoreapp3.1",
     "self-contained" : false,
     "application"    : "MVCWebApp",
@@ -11,8 +11,8 @@
     "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-926f6aeb\";\"aws:ec2:vpc,Subnets\"=\"subnet-71d04e3d\"",
     "solution-stack"       : "64bit Amazon Linux 2 v1.0.0 running .NET Core",
     "environment-type"     : "SingleInstance",
-    "cname"                : "mvcwebapp-dev",
-    "instance-type"        : "t3a.medium",
+    "cname"                : "ahkforeditors",
+    "instance-type"        : "t2.micro",
     "key-pair"             : "",
     "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
     "service-role"         : "aws-elasticbeanstalk-service-role",
