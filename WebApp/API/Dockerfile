@@ -8,10 +8,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["API.csproj", "API/"]
-COPY ["Contracts/Contracts.csproj", "Contracts/"]
-COPY ["DataContracts/DataContracts.csproj", "DataContracts/"]
-COPY ["Managers/Managers.csproj", "Managers/"]
-COPY ["Engines/Engines.csproj", "Engines/"]
+COPY ["Contracts/DataContracts/DataContracts.csproj", "DataContracts/"]
+COPY ["Managers.csproj", "Managers/"]
+COPY ["Engines.csproj", "Engines/"]
 RUN dotnet restore "API/API.csproj"
 COPY . .
 WORKDIR "/src/API"
