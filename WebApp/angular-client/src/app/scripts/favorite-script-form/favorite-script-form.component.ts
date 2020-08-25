@@ -6,7 +6,8 @@ import { DataService } from '../../data/data.service';
 @Component({
   selector: 'app-favorite-script-form',
   templateUrl: './favorite-script-form.component.html',
-  styleUrls: ['./favorite-script-form.component.css']
+  // styleUrls: ['./favorite-script-form.component.css']
+  //styleUrls: ['../../../styles.css']
 })
 export class FavoriteScriptFormComponent implements OnInit {
   @ViewChild('originalX') originalX: ElementRef;
@@ -27,7 +28,7 @@ export class FavoriteScriptFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     console.log('in onSubmit: ', form.valid);
 
     if (form.valid) {

@@ -16,7 +16,7 @@ export class DataService {
   postRunOnOpenFavorites(configurationModel: IRunOnOpenConfiguration): void {
     this.http.post(`${this.apiEndpoint}/Script/CreateRunOnOpenFavoriteScript`, configurationModel,
      { responseType: 'blob'}).subscribe(blob => {
-      saveAs(blob, `${configurationModel.FileName}.ahk`);
+      saveAs(blob);
     });
   }
 }
