@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["API/API.csproj", "API/"]
+COPY ["API.csproj", "API/"]
 COPY ["Contracts/Contracts.csproj", "Contracts/"]
 COPY ["DataContracts/DataContracts.csproj", "DataContracts/"]
 COPY ["Managers/Managers.csproj", "Managers/"]
