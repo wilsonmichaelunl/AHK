@@ -1,0 +1,52 @@
+<div class="text-center center-form-div">
+    <div [hidden]="!postError" class="alert alert-danger form-error-alert">
+        {{ postErrorMessage }}
+    </div>
+</div>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+        <label class="form-label">Original X Coordinate</label>
+        <div class="center-form-div">
+            <input id="originalX" name="originalX" type="number" class="form-control script-form-field" 
+            [(ngModel)]="scriptConfiguration.OriginalX" required #originalX="ngModel" [class.field-error]="form.submitted && originalX.invalid">
+        </div>
+    </div> 
+    <div class="form-group">
+        <label class="form-label">Original Y Coordinate</label>
+        <div class="center-form-div">
+            <input id="originalY" name="originalY" type="number" class="form-control script-form-field" 
+            [(ngModel)]="scriptConfiguration.OriginalY" required #originalY="ngModel" [class.field-error]="form.submitted && originalY.invalid">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">New X Coordinate</label>
+        <div class="center-form-div">
+            <input id="newX" name="newX" type="number" class="form-control script-form-field" 
+            [(ngModel)]="scriptConfiguration.NewX" required #newX="ngModel" [class.field-error]="form.submitted && newX.invalid">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">New Y Coordinate</label>
+        <div class="center-form-div">
+            <input id="newY" name="newY" type="number" class="form-control script-form-field" 
+            [(ngModel)]="scriptConfiguration.NewY" required #newY="ngModel" [class.field-error]="form.submitted && newY.invalid">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Effect Name</label>
+        <div class="center-form-div">
+            <input id="effectName" name="effectName" class="form-control script-form-field" 
+            [(ngModel)]="scriptConfiguration.EffectName" required #effectName="ngModel" [class.field-error]="form.submitted && effectName.invalid">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">File Name</label>
+        <div class="center-form-div">
+            <input id="fileName" name="fileName" class="form-control script-form-field" 
+            [(ngModel)]="scriptConfiguration.FileName" required #fileName="ngModel" [class.field-error]="form.submitted && fileName.invalid">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

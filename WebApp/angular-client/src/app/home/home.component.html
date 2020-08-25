@@ -1,0 +1,25 @@
+<div class="container text-center">
+    <div class="page-header">
+        <h1 class="display-4"> {{ welcomeMessage }}</h1>
+    </div>
+    
+    <div class='home-instructions'>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uo4cn6keD8Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="script-choice">
+        <h3>What kind of script would you like to make?</h3>
+
+        <select id="scriptSelectDropdown" [(ngModel)]='dropdownValue'>
+            <option value="0">Select a script</option>
+            <option value="1">Hot Key Script</option>
+            <option value="2">Presets Stream Deck</option>
+            <option value="3">Favorites Stream Deck</option>
+        </select>
+    </div>
+
+    <div *ngIf='dropdownValue === "3"'>
+        <app-favorite-script-form></app-favorite-script-form>
+    </div>
+</div>
