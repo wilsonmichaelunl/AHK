@@ -13,8 +13,8 @@ COPY ["API.csproj", "API/"]
 #COPY ["DataContracts.csproj", "DataContracts/"]
 
 RUN dotnet restore "API/API.csproj"
-COPY . .
 WORKDIR "/src/API"
+COPY . .
 RUN dotnet build "API.csproj" -c Release -o /app/build
 
 FROM build AS publish
