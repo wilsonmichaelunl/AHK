@@ -26,4 +26,11 @@ export class DataService {
       saveAs(blob, `${configurationModel.FileName}.ahk`);
     });
   }
+
+  getConfigurationScript(): void {
+    this.http.post(`${this.apiEndpoint}/Script/GetConfiguartionScript`, null, { responseType: 'blob'} )
+    .subscribe(blob => {
+        saveAs(blob, 'configuration.ahk');
+    });
+  }
 }
