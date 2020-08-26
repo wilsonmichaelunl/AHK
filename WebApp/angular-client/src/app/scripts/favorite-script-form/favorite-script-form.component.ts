@@ -5,9 +5,7 @@ import { DataService } from '../../data/data.service';
 
 @Component({
   selector: 'app-favorite-script-form',
-  templateUrl: './favorite-script-form.component.html',
-  // styleUrls: ['./favorite-script-form.component.css']
-  //styleUrls: ['../../../styles.css']
+  templateUrl: './favorite-script-form.component.html'
 })
 export class FavoriteScriptFormComponent implements OnInit {
   @ViewChild('originalX') originalX: ElementRef;
@@ -29,16 +27,14 @@ export class FavoriteScriptFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
-    console.log('in onSubmit: ', form.valid);
 
     if (form.valid) {
-      this.dataService.postRunOnOpenFavorites(this.scriptConfiguration);
-      console.log('hi');
+      this.dataService.getRunOnOpenFavorites(this.scriptConfiguration);
       this.postError = false;
     }
     else {
       this.postError = true;
-      this.postErrorMessage = 'Please fix the below errors';
+      this.postErrorMessage = 'Please fix the errors below';
     }
   }
 }

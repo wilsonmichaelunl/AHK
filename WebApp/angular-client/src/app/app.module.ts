@@ -11,6 +11,7 @@ import { ScriptModule } from './scripts/script.module';
 import { AboutComponent } from './home/about/about.component';
 import { InstructionsComponent } from './home/instructions/instructions.component';
 import { FavoriteScriptFormComponent } from './scripts/favorite-script-form/favorite-script-form.component';
+import { PresetScriptFormComponent } from './scripts/preset-script-form/preset-script-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FavoriteScriptFormComponent } from './scripts/favorite-script-form/favo
     HomeComponent,
     AboutComponent,
     InstructionsComponent,
-    FavoriteScriptFormComponent
+    FavoriteScriptFormComponent,
+    PresetScriptFormComponent
   ],
   imports: [
     BrowserModule,

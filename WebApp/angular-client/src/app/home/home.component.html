@@ -19,6 +19,10 @@
         </select>
     </div>
 
+    <div *ngIf='dropdownValue === "2"'>
+        <app-preset-script-form></app-preset-script-form>
+    </div>
+    
     <div *ngIf='dropdownValue === "3"'>
         <app-favorite-script-form></app-favorite-script-form>
     </div>

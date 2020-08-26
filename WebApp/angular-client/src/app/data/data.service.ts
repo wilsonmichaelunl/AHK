@@ -13,10 +13,17 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  postRunOnOpenFavorites(configurationModel: IRunOnOpenConfiguration): void {
+  getRunOnOpenFavorites(configurationModel: IRunOnOpenConfiguration): void {
     this.http.post(`${this.apiEndpoint}/Script/CreateRunOnOpenFavoriteScript`, configurationModel,
      { responseType: 'blob'}).subscribe(blob => {
-      saveAs(blob);
+      saveAs(blob, `${configurationModel.FileName}.ahk`);
+    });
+  }
+
+  getRunOnOpenPreset(configurationModel: IRunOnOpenConfiguration): void {
+    this.http.post(`${this.apiEndpoint}/Script/CreateRunOnOpenPresetScript`, configurationModel,
+     { responseType: 'blob'}).subscribe(blob => {
+      saveAs(blob, `${configurationModel.FileName}.ahk`);
     });
   }
 }
