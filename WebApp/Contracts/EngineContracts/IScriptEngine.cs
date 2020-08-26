@@ -12,5 +12,6 @@ namespace Contracts.EngineContracts
         MemoryStream BuildRunOnOpenFavorite(RunOnOpenScriptConfigurationModel model);
         void ValidateRunOnOpenScriptConfigurationModel(RunOnOpenScriptConfigurationModel model);
         RunOnOpenScriptConfigurationModel BuildRunOnOpenScriptConfigurationModel(RunOnOpenScriptConfigurationModel model);
+        MemoryStream GetConfiguartionScript();
     }
 }

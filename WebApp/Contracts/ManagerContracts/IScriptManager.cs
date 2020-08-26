@@ -10,5 +10,7 @@ namespace Contracts.ManagerContracts
     {
         MemoryStream BuildRunOnOpenPreset(RunOnOpenScriptConfigurationModel model);
         MemoryStream BuildRunOnOpenFavorite(RunOnOpenScriptConfigurationModel model);
+        MemoryStream GetConfiguartionScript();
+
     }
 }

@@ -34,5 +34,11 @@ namespace Managers
 
             return file;
         }
+
+        public MemoryStream GetConfiguartionScript()
+        {
+            var file = _scriptEngine.GetConfiguartionScript();
+            return file;
+        }
     }
 }

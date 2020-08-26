@@ -258,5 +258,119 @@ namespace Engines
 
             return model;
         }
+
+        public MemoryStream GetConfiguartionScript()
+        {
+            string[] lines =
+            {
+                "SetWorkingDir %A_ScriptDir%",
+                "#NoEnv",
+                "SendMode Input",
+                "#SingleInstance force",
+                "#MaxHotkeysPerInterval 2000",
+                "#WinActivateForce",
+                "configureFavorite()",
+                "{",
+                "keywait, %A_PriorHotKey%",
+                "sendinput, {blind}{SC0EC}",
+                "ifWinNotActive ahk_exe Adobe Premiere Pro.exe",
+                "   goto theEnding",
+                "coordmode, pixel, Window",
+                "coordmode, mouse, Window",
+                "coordmode, Caret, Client",
+                "BlockInput, SendAndMouse",
+                "BlockInput, MouseMove",
+                "BlockInput, On",
+                "SetKeyDelay, 0 ",
+                "Sendinput, k",
+                "sleep 10",
+                "Sendinput, k",
+                "sleep 5",
+                "sendinput, {mButton} ",
+                "sleep 5",
+                "Send +{7}",
+                "sleep 15",
+                "Sendinput, +f",
+                "Sendinput, warp stabilizer",
+                "sleep 5",
+                "MouseMove, %A_CaretX%, %A_CaretY%, 0",
+                "sleep 5",
+                "blockinput, MouseMoveOff",
+                "BlockInput, off",
+                "MsgBox, Original Coordinates X: %A_CaretX%, Y: %A_CaretY% `nEnter these coordinates into the console window `nOnce these numbers are entered. Click on the icon next to warp stabilizer under Favorites and click ALT+G",
+                "theEnding:",
+                "}",
+                "",
+                "",
+                "configurePreset()",
+                "{",
+                "keywait, %A_PriorHotKey%",
+                "sendinput, {blind}{SC0EC}",
+                "ifWinNotActive ahk_exe Adobe Premiere Pro.exe",
+                "   goto thePresetEnding",
+                "coordmode, pixel, Window",
+                "coordmode, mouse, Window",
+                "coordmode, Caret, Client",
+                "BlockInput, SendAndMouse",
+                "BlockInput, MouseMove",
+                "BlockInput, On",
+                "SetKeyDelay, 0 ",
+                "Sendinput, k",
+                "sleep 10",
+                "Sendinput, k",
+                "sleep 5",
+                "sendinput, {mButton} ",
+                "sleep 5",
+                "Send +{7}",
+                "sleep 15",
+                "Sendinput, +f",
+                "Sendinput, twirl in",
+                "sleep 5",
+                "MouseMove, %A_CaretX%, %A_CaretY%, 0",
+                "sleep 5",
+                "blockinput, MouseMoveOff",
+                "BlockInput, off",
+                "MsgBox, Original Coordinates X: %A_CaretX%, Y: %A_CaretY% `nEnter these coordinates into the console window `nOnce these numbers are entered. Click on the icon next to Twirl In and click ALT+G",
+                "thePresetEnding:",
+                "}",
+                "",
+                "",
+                "getCurrentPos()",
+                "{",
+                "keywait, %A_PriorHotKey%",
+                "ifWinNotActive ahk_exe Adobe Premiere Pro.exe",
+                "   goto theEnd",
+                "coordmode, pixel, Window",
+                "coordmode, mouse, Window",
+                "coordmode, Caret, Window",
+                "BlockInput, SendAndMouse",
+                "BlockInput, MouseMove",
+                "BlockInput, On",
+                "MouseGetPos, X, Y",
+                "blockinput, MouseMoveOff",
+                "BlockInput, off",
+                "MsgBox, New Coordinates X: %X%, Y: %Y% `nEnter these coordinates into the console window",
+                "ExitApp",
+                "theEnd:",
+                "}",
+                "!f::configureFavorite()",
+                "!p::configurePreset()",
+                "!g::getCurrentPos()",
+                "Esc::ExitApp",
+            };
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                StreamWriter objstreamwriter = new StreamWriter(stream);
+                foreach (string line in lines)
+                {
+                    objstreamwriter.Write(line);
+                    objstreamwriter.WriteLine();
+                }
+                objstreamwriter.Flush();
+                objstreamwriter.Close();
+                return stream;
+            }
+        }
     }
 }

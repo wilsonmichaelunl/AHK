@@ -38,6 +38,13 @@ namespace API.Controllers
             return File(file.ToArray(), "text/plain", $"{model.FileName}.ahk");
         }
 
+        public FileContentResult GetConfiguartionScript()
+        {
+            var file = _scriptManager.GetConfiguartionScript();
+
+            return File(file.ToArray(), "text/plain");
+        }
+
         [HttpGet]
         public ActionResult<List<RunOnOpenScriptConfigurationModel>> Test()
         {
