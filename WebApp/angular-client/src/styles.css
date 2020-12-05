@@ -24,3 +24,8 @@
     align-items: center;
     display: flex;
 }
+
+.card-header-left {
+    text-align: left;
+    font-size: large;
+}

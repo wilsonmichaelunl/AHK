@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { IRunOnOpenConfiguration } from './run-on-open-configuration';
 import { saveAs } from 'file-saver';
 import { environment } from '../../environments/environment';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +14,25 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getRunOnOpenFavorites(configurationModel: IRunOnOpenConfiguration): void {
+  getRunOnOpenFavorites(configurationModel: IRunOnOpenConfiguration, fileName: string): void {
+    console.log(fileName);
     this.http.post(`${this.apiEndpoint}/Script/CreateRunOnOpenFavoriteScript`, configurationModel,
      { responseType: 'blob'}).subscribe(blob => {
-      saveAs(blob, `${configurationModel.FileName}.ahk`);
+      saveAs(blob, `${fileName}.ahk`);
+    });
+  }
+
+  getRunOnOpenFavorites_New(form: FormGroup, fileName: string): void {
+    this.http.post(`${this.apiEndpoint}/Script/CreateRunOnOpenFavoriteScript`, form,
+     { responseType: 'blob'}).subscribe(blob => {
+      saveAs(blob, `${fileName}.ahk`);
     });
   }
 
   getRunOnOpenPreset(configurationModel: IRunOnOpenConfiguration): void {
     this.http.post(`${this.apiEndpoint}/Script/CreateRunOnOpenPresetScript`, configurationModel,
      { responseType: 'blob'}).subscribe(blob => {
-      saveAs(blob, `${configurationModel.FileName}.ahk`);
+       saveAs(blob, `${configurationModel.FileName}.ahk`);
     });
   }
 

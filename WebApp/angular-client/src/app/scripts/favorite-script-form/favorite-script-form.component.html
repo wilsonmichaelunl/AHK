@@ -1,52 +1,130 @@
-<div class="text-center center-form-div">
-    <div [hidden]="!postError" class="alert alert-danger form-error-alert">
-        {{ postErrorMessage }}
+<div class="card">
+    <div class="card-header card-header-left">
+        Create a custom Favorite script for your Stream Deck
+    </div>
+    <div class="card-body">
+        <form novalidate
+        (ngSubmit)="submit()"
+        [formGroup]="scriptForm">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label"
+                    for="originalXId">Original X Coordinate</label>
+                <div class="col-md-8">
+                <input class="form-control"
+                        id="originalXId"
+                        type="number"
+                        placeholder="Original X Coordinate (required)"
+                        formControlName="originalX"
+                        [ngClass]="{'is-invalid': (scriptForm.get('originalX').touched || scriptForm.get('originalX').dirty) && !scriptForm.get('originalX').valid }" />
+                <span class="invalid-feedback">
+                    <span *ngIf="scriptForm.get('originalX').errors?.required">
+                    Please enter your original X coordinate.
+                    </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label"
+                    for="originalYId">Original Y Coordinate</label>
+                <div class="col-md-8">
+                <input class="form-control"
+                        id="originalYId"
+                        type="number"
+                        placeholder="Original Y Coordinate (required)"
+                        formControlName="originalY"
+                        [ngClass]="{'is-invalid': (scriptForm.get('originalY').touched || scriptForm.get('originalY').dirty) && !scriptForm.get('originalY').valid }" />
+                <span class="invalid-feedback">
+                    <span *ngIf="scriptForm.get('originalY').errors?.required">
+                    Please enter your original Y coordinate.
+                    </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label"
+                    for="newXId">New X Coordinate</label>
+                <div class="col-md-8">
+                <input class="form-control"
+                        id="newXId"
+                        type="number"
+                        placeholder="New X Coordinate (required)"
+                        formControlName="newX"
+                        [ngClass]="{'is-invalid': (scriptForm.get('newX').touched || scriptForm.get('newX').dirty) && !scriptForm.get('newX').valid }" />
+                <span class="invalid-feedback">
+                    <span *ngIf="scriptForm.get('newX').errors?.required">
+                    Please enter your new X coordinate.
+                    </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label"
+                    for="newYId">New Y Coordinate</label>
+                <div class="col-md-8">
+                <input class="form-control"
+                        id="newYId"
+                        type="number"
+                        placeholder="New Y Coordinate (required)"
+                        formControlName="newY"
+                        [ngClass]="{'is-invalid': (scriptForm.get('newY').touched || scriptForm.get('newY').dirty) && !scriptForm.get('newY').valid }" />
+                <span class="invalid-feedback">
+                    <span *ngIf="scriptForm.get('newY').errors?.required">
+                    Please your original Y coordinate.
+                    </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label"
+                    for="effectNameId">Effect Name</label>
+                <div class="col-md-8">
+                <input class="form-control"
+                        id="effectNameId"
+                        type="text"
+                        placeholder="Effect Name (required)"
+                        formControlName="effectName"
+                        [ngClass]="{'is-invalid': (scriptForm.get('effectName').touched || scriptForm.get('effectName').dirty) && !scriptForm.get('effectName').valid }" />
+                <span class="invalid-feedback">
+                    <span *ngIf="scriptForm.get('effectName').errors?.required">
+                    Please enter the effect name.
+                    </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label"
+                    for="fileNameId">File Name</label>
+                <div class="col-md-8">
+                <input class="form-control"
+                        id="fileNameId"
+                        type="text"
+                        placeholder="File Name (required)"
+                        formControlName="fileName"
+                        [ngClass]="{'is-invalid': (scriptForm.get('fileName').touched || scriptForm.get('fileName').dirty) && !scriptForm.get('fileName').valid }" />
+                <span class="invalid-feedback">
+                    <span *ngIf="scriptForm.get('fileName').errors?.required">
+                    Please enter the file name.
+                    </span>
+                </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-4">
+                <button class="btn btn-primary mr-3"
+                        type="submit"
+                        style="width:80px"
+                        [title]="scriptForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!scriptForm.valid">
+                    Submit
+                </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <div class="form-group">
-        <label class="form-label">Original X Coordinate</label>
-        <div class="center-form-div">
-            <input id="originalX" name="originalX" type="number" class="form-control script-form-field" 
-            [(ngModel)]="scriptConfiguration.OriginalX" required #originalX="ngModel" [class.field-error]="form.submitted && originalX.invalid">
-        </div>
-    </div> 
-    <div class="form-group">
-        <label class="form-label">Original Y Coordinate</label>
-        <div class="center-form-div">
-            <input id="originalY" name="originalY" type="number" class="form-control script-form-field" 
-            [(ngModel)]="scriptConfiguration.OriginalY" required #originalY="ngModel" [class.field-error]="form.submitted && originalY.invalid">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="form-label">New X Coordinate</label>
-        <div class="center-form-div">
-            <input id="newX" name="newX" type="number" class="form-control script-form-field" 
-            [(ngModel)]="scriptConfiguration.NewX" required #newX="ngModel" [class.field-error]="form.submitted && newX.invalid">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="form-label">New Y Coordinate</label>
-        <div class="center-form-div">
-            <input id="newY" name="newY" type="number" class="form-control script-form-field" 
-            [(ngModel)]="scriptConfiguration.NewY" required #newY="ngModel" [class.field-error]="form.submitted && newY.invalid">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="form-label">Effect Name</label>
-        <div class="center-form-div">
-            <input id="effectName" name="effectName" class="form-control script-form-field" 
-            [(ngModel)]="scriptConfiguration.EffectName" required #effectName="ngModel" [class.field-error]="form.submitted && effectName.invalid">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="form-label">File Name</label>
-        <div class="center-form-div">
-            <input id="fileName" name="fileName" class="form-control script-form-field" 
-            [(ngModel)]="scriptConfiguration.FileName" required #fileName="ngModel" [class.field-error]="form.submitted && fileName.invalid">
-        </div>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>

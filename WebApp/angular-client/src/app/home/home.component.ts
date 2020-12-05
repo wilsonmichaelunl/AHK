@@ -6,7 +6,7 @@ import { DataService } from '../data/data.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent { 
+export class HomeComponent {
   welcomeMessage: string = 'Welcome to AHK Scripts For Editors!';
   dropdownValue = '0';
 
